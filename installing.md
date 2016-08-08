@@ -1,13 +1,22 @@
 ## PAQUETES ESTADÍSTICOS:
 Durante el curso se manejarán varios paquetes estadísticos que nos servirán para entender mejor los conceptos y para realizar análisis Bayesianos.
 * R (http://www.r-project.org/)
-Paquetes: R2WinBUGS, R2OpenBUGS, rjags
+Paquetes: R2WinBUGS, R2OpenBUGS, R2jags
 * R Studio (http://www.rstudio.com/)
 * WinBUGS (http://www.mrc-bsu.cam.ac.uk/bugs/)
 * OpenBUGS (http://www.openbugs.net/)
 * JAGS (http://sourceforge.net/projects/mcmc-jags/files/JAGS/) 
 
-## Para instalar rjags y R2jags, abre R Studio y teclea lo siguiente
+## Instalando R
+http://ftp.osuosl.org/pub/cran/
+
+## Instalando R Studio para escritorio
+
+https://www.rstudio.com/products/rstudio/download2/
+
+## Instalando librerías en R rjags y R2jags
+
+Abre R Studio y teclea lo siguiente
 
 ```
 > install.packages("rjags", dependencies=TRUE) 
@@ -28,6 +37,8 @@ package ‘rjags’ successfully unpacked and MD5 sums checked
 
 The downloaded binary packages are in
 	C:\Users\gabriela.flores\AppData\Local\Temp\Rtmpa22eUp\downloaded_packages
+	
+	
 > install.packages("R2jags", dependencies=TRUE)
 Installing package into ‘C:/Users/gabriela.flores/Documents/R/win-library/3.3’
 (as ‘lib’ is unspecified)
@@ -52,6 +63,30 @@ package ‘R2jags’ successfully unpacked and MD5 sums checked
 The downloaded binary packages are in
 	C:\Users\gabriela.flores\AppData\Local\Temp\Rtmpa22eUp\downloaded_packages
 
+
+install.packages("R2OpenBUGS")
+Installing package into ‘C:/Users/gabriela.flores/Documents/R/win-library/3.3’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.3/R2OpenBUGS_3.2-3.1.zip'
+Content type 'application/zip' length 974250 bytes (951 KB)
+downloaded 951 KB
+
+package ‘R2OpenBUGS’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\gabriela.flores\AppData\Local\Temp\RtmpOyhKKb\downloaded_packages
+	
+> install.packages("R2WinBUGS")
+Installing package into ‘C:/Users/gabriela.flores/Documents/R/win-library/3.3’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.3/R2WinBUGS_2.1-21.zip'
+Content type 'application/zip' length 779782 bytes (761 KB)
+downloaded 761 KB
+
+package ‘R2WinBUGS’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\gabriela.flores\AppData\Local\Temp\RtmpgZEUVA\downloaded_packages
 ```
 ## Para Probar, teclea:
 ```
