@@ -1,8 +1,7 @@
-# glm
-Regresión avanzada con Enfoque Bayesiano
-PROFESOR: LUIS E. NIETO BARAJAS
-EMAIL: lnieto@itam.mx
-URL: http://allman.rhon.itam.mx/~lnieto 
+# Regresión avanzada con Enfoque Bayesiano
+### PROFESOR: LUIS E. NIETO BARAJAS
+### EMAIL: lnieto@itam.mx
+### URL: http://allman.rhon.itam.mx/~lnieto 
 
 ## OBJETIVO:
 
