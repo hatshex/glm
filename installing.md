@@ -1,6 +1,5 @@
-PAQUETES ESTADÍSTICOS: Durante el curso se manejarán varios paquetes
-estadísticos que nos servirán para entender mejor los conceptos y para
-realizar análisis Bayesianos.
+## PAQUETES ESTADÍSTICOS:
+Durante el curso se manejarán varios paquetes estadísticos que nos servirán para entender mejor los conceptos y para realizar análisis Bayesianos.
 1) R (http://www.r-project.org/)
 Paquetes: R2WinBUGS, R2OpenBUGS, rjags
 2) R Studio (http://www.rstudio.com/)
@@ -8,8 +7,7 @@ Paquetes: R2WinBUGS, R2OpenBUGS, rjags
 4) OpenBUGS (http://www.openbugs.net/)
 5) JAGS (http://sourceforge.net/projects/mcmc-jags/files/JAGS/) 
 
-
-You install rjags (and R2jags) from within R. Open R, and then type
+## Para instalar rjags y R2jags, abre R Studio y teclea lo siguiente
 
 ```
 > install.packages("rjags", dependencies=TRUE) 
