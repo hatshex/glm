@@ -1,11 +1,11 @@
 ## PAQUETES ESTADÍSTICOS:
 Durante el curso se manejarán varios paquetes estadísticos que nos servirán para entender mejor los conceptos y para realizar análisis Bayesianos.
-1) R (http://www.r-project.org/)
+* R (http://www.r-project.org/)
 Paquetes: R2WinBUGS, R2OpenBUGS, rjags
-2) R Studio (http://www.rstudio.com/)
-3) WinBUGS (http://www.mrc-bsu.cam.ac.uk/bugs/)
-4) OpenBUGS (http://www.openbugs.net/)
-5) JAGS (http://sourceforge.net/projects/mcmc-jags/files/JAGS/) 
+* R Studio (http://www.rstudio.com/)
+* WinBUGS (http://www.mrc-bsu.cam.ac.uk/bugs/)
+* OpenBUGS (http://www.openbugs.net/)
+* JAGS (http://sourceforge.net/projects/mcmc-jags/files/JAGS/) 
 
 ## Para instalar rjags y R2jags, abre R Studio y teclea lo siguiente
 
@@ -53,10 +53,23 @@ The downloaded binary packages are in
 	C:\Users\gabriela.flores\AppData\Local\Temp\Rtmpa22eUp\downloaded_packages
 
 ```
-and hit enter after each. If it asks you to select a CRAN mirror, pick “USA (OR)”. This will run installation scripts.
-Check that it worked. In R, type
+## Para Probar, teclea:
+```
+> library(rjags)
+Linked to JAGS 4.2.0
+Loaded modules: basemod,bugs
+```
 
-library(rjags)
-You should see something like this:
+## Algo mal?
+```
+Loading required package: coda
+Error : .onLoad failed in loadNamespace() for 'rjags', details:
+  call: fun(libname, pkgname)
+  error: Failed to locate any version of JAGS version 4
 
-Loading required package: coda Loading required package: lattice Linked to JAGS 3.3.0 Loaded modules: basemod,bugs
+The rjags package is just an interface to the JAGS library
+Make sure you have installed JAGS-4.x.y.exe (for any x >=0, y>=0) from
+http://www.sourceforge.net/projects/mcmc-jags/files
+
+Error: package or namespace load failed for ‘rjags’
+```
