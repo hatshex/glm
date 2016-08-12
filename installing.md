@@ -25,6 +25,7 @@ install.packages("rjags", dependencies=TRUE)
 install.packages("R2jags", dependencies=TRUE)
 install.packages("R2OpenBUGS", dependencies=TRUE)
 install.packages("R2WinBUGS", dependencies=TRUE)
+install.packages("rmarkdown", dependencies=TRUE)
 ```
 
 La salida se verá:
