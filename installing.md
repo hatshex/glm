@@ -17,6 +17,17 @@ https://www.rstudio.com/products/rstudio/download2/
 ## Instalando librerías en R rjags y R2jags
 
 Abre R Studio y teclea lo siguiente
+```
+install.packages('dplyr', 
+	    dependencies = TRUE, 
+	    repos = "http://cran.us.r-project.org")
+install.packages("rjags", dependencies=TRUE) 
+install.packages("R2jags", dependencies=TRUE)
+install.packages("R2OpenBUGS", dependencies=TRUE)
+install.packages("R2WinBUGS", dependencies=TRUE)
+```
+
+La salida se verá:
 
 ```
 > install.packages("rjags", dependencies=TRUE) 
