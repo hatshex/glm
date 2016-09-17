@@ -36,4 +36,4 @@ R.A. Derrig & G. Meyers (eds.) Cambridge University Press, pp 334-366.
 and Analysis for Spatial Data, 2a. edición. Chapman & Hall: Boca Raton. 
 
 ## Información Básica e interesante
-* (Comando básicos de R)[http://personales.unican.es/gonzaleof/R/comandos.pdf]
+* [Comando básicos de R](http://personales.unican.es/gonzaleof/R/comandos.pdf)
