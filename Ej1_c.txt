@@ -1,0 +1,16 @@
+model
+{
+#Likelihood
+for (i in 1:n) {
+	x[i] ~ dbin(theta,1)
+	}
+#Priors
+#Inciso c
+theta ~ dbeta(0.5,0.5)
+#----------
+
+#Predictive
+for (j in 1:2) {
+	x1[j] ~ dbin(theta,1)
+	}
+}

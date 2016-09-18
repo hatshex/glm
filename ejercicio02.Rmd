@@ -1,0 +1,87 @@
+---
+title: "Ejercicio 2"
+date: "19 de septiembre de 2016"
+output:
+  html_document: default
+  html_notebook: default
+  pdf_document: default
+autor: Gabriela Flores Bracamontes
+---
+
+
+2) Las utilidades mensuales de una compañía tienen una distribución N($\mu, \sigma^2$).
+Suponga que una muestra de 10 meses de esta compañía dio como resultado las siguientes utilidades: (212, 207, 210, 196, 223, 193, 196, 210, 202, 221).
+  * a) La incertidumbre sobre la utilidad promedio anual  se puede representar por una distribución N(200,40), y la incertidumbre de la desviación estándar de las utilidades mensuales se puede representar mediante una distribución Ga(10,1). Mediante la distribución
+posterior estima $\mu, \sigma^2$ y 2.
+  * b) Utilizando una distribución inicial no informativa, estima mediante la correspondiente distribución inicial $\mu, \sigma^2$ y 2.
+
+```{r a, echo=TRUE}
+
+library(R2OpenBUGS)
+library(R2jags)
+
+#-Working directory-
+setwd("E:/itam/2016 Verano/glm/")
+
+#--- Ejemplo 2---
+#-Reading data-
+utilidad<-c(212, 207, 210,
+            196, 223, 193,
+            196, 210, 202, 221)
+n<-length(utilidad)
+
+#-Defining data-
+data<-list("n"=n,"x"=utilidad)
+
+#-Defining inits-
+inits<-function(){list(mu=0,sig=1,x1=0)}
+
+#-Selecting parameters to monitor-
+parameters<-c("mu","sig","x1")
+
+#-Running code-
+#OpenBUGS
+ej2.sim<-bugs(data,inits,parameters,model.file="Ej2.txt",              n.iter=5000,n.chains=1,n.burnin=500)
+
+#-Monitoring chain-
+
+#Traza de la cadena
+traceplot(ej2.sim)
+
+dev.off()
+```
+
+
+```{r}
+#Cadena
+
+#OpenBUGS
+out<-ej2.sim$sims.list
+
+z<-out$x1
+par(mfrow=c(2,2))
+plot(z,type="l")
+plot(cumsum(z)/(1:length(z)),type="l")
+hist(z,freq=FALSE)
+acf(z)
+```
+
+```{r}
+#Resumen (estimadores)
+#OpenBUGS
+out.sum<-ej2.sim$summary
+
+print(out.sum)
+```
+
+```{r}
+#DIC
+#OpenBUGS
+out.dic<-ej2.sim$DIC
+
+print(out.dic)
+
+```
+
+
+
