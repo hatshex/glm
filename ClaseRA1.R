@@ -309,8 +309,8 @@ parameters<-c("beta","tau","yf")
 
 #-Running code-
 #OpenBUGS
-ej3.sim<-bugs(data,inits,parameters,model.file="Ej3.txt",
-              n.iter=10000,n.chains=1,n.burnin=1000)
+ej3.sim<-bugs(data,inits,parameters,model.file="Ej3_exp.txt",
+              n.iter=1000000,n.chains=1,n.burnin=10000)
 #JAGS
 ej3.sim<-jags(data,inits,parameters,model.file="Ej3.txt",
               n.iter=10000,n.chains=1,n.burnin=1000)
@@ -335,6 +335,17 @@ plot(cumsum(z)/(1:length(z)),type="l")
 hist(z,freq=FALSE)
 acf(z)
 
+
+z<-out$beta[,1]
+par(mfrow=c(2,2))
+plot(z,type="l")
+plot(cumsum(z)/(1:length(z)),type="l")
+hist(z,freq=FALSE)
+acf(z)
+
+z<-out$beta
+par(mfrow=c(1,1))
+plot(z)
 #Resumen (estimadores)
 #OpenBUGS
 out.sum<-ej3.sim$summary
@@ -361,9 +372,9 @@ ymin<-min(calif$SP,out.yf[,c(1,3,7)])
 ymax<-max(calif$SP,out.yf[,c(1,3,7)])
 par(mfrow=c(1,1))
 plot(calif$MO,calif$SP,ylim=c(ymin,ymax))
-lines(calif$MO[or],out.yf[or,1],lwd=2,col=2)
-lines(calif$MO[or],out.yf[or,3],lty=2,col=2)
-lines(calif$MO[or],out.yf[or,7],lty=2,col=2)
+lines(calif$MO[or],out.yf[or,1],lwd=2,col=4)
+lines(calif$MO[or],out.yf[or,3],lty=2,col=4)
+lines(calif$MO[or],out.yf[or,7],lty=2,col=4)
 
 
 #--- Ejemplo 4 ---

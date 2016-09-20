@@ -1,35 +1,94 @@
 ---
-title: "Ejercicio 2"
-date: "19 de septiembre de 2016"
+#title: "Ejercicio 2"
+#date: "19 de septiembre de 2016"
 output:
   html_document: default
   html_notebook: default
   pdf_document: default
 autor: Gabriela Flores Bracamontes
 ---
-
-
-2) Las utilidades mensuales de una compañía tienen una distribución N($\mu, \sigma^2$).
+## ITAM
+### Maestría en Ciencia de Datos
+#### Métodos Lineales Generalizados.
+* Profesor: 
+    + __Luis Enrique Nieto Barajas__
+* Alumna:
+    + __Gabriela Flores Bracamontes__
+* Clave:
+    + __160124__
+* 19 de septiembre de 2016
+* Ejercicio 2
+* Descripción:
+    + Las utilidades mensuales de una compañía tienen una distribución N($\mu, \sigma^2$).
 Suponga que una muestra de 10 meses de esta compañía dio como resultado las siguientes utilidades: (212, 207, 210, 196, 223, 193, 196, 210, 202, 221).
-  * a) La incertidumbre sobre la utilidad promedio anual  se puede representar por una distribución N(200,40), y la incertidumbre de la desviación estándar de las utilidades mensuales se puede representar mediante una distribución Ga(10,1). Mediante la distribución
-posterior estima $\mu, \sigma^2$ y 2.
-  * b) Utilizando una distribución inicial no informativa, estima mediante la correspondiente distribución inicial $\mu, \sigma^2$ y 2.
+    + a) La incertidumbre sobre la utilidad promedio anual $\mu$ se puede representar por una distribución N(200,40), y la incertidumbre de la desviación estándar de las utilidades mensuales se puede representar mediante una distribución Ga(10,1). Mediante la distribución
+posterior estima $\mu$ y $\sigma^2$.
+    + b) Utilizando una distribución inicial no informativa, estima mediante la correspondiente distribución inicial $\mu$ y $\sigma^2$ .
 
-```{r a, echo=TRUE}
+
+###Conclusiones:
+En el ejercicio utilizamos 2 modelos, el primero con una distribución inicial informativa con parámetros $\mu$=200 y $\sigma^2$=10; el segundo con una distribución inicial __no__ informativa con parámetros $\mu$=0 y $\sigma^2$=0.001; los cuáles nos dieron las siguientes medidas de ajuste:
+
+* Modelo 1
+    + __DIC: 76.98607__
+    + $\mu$=205.47244
+    + $\sigma^2$=10.54300 
+    + Intervalos $\mu$=(203.6,211) y $\sigma^2$=(9.1480, 15.01525)
+
+* Modelo 2
+    + __DIC: 78.46189__
+    + $\mu$ =206.70280
+    + $\sigma^2$=11.22055
+    + Intervalos  $\mu$=(204.5,213.9) y $\sigma^2$=(9.1395,18.53050)
+
+Ambas estimaciones se parecen a la $\mu$ y la $\sigma^2$ de los datos pero el mejor ajuste se presentó con el modelo 1 por lo tanto sería mejor elegirlo.
+
+### A continuación se describe el código y se muestran las gráficas y tablas que resultaron del ejercicio 2.
+
+
+### Definimos el modelo con una inicial informativa
+* Las variables son de tipo Normal ($\mu, \tau$)
+* f($\mu, \sigma^2$) es nuestra distribución inicial
+* Utilizamos el archivo __Eje2_a.txt__ para describir nuestro modelo:
+```shell
+model
+{
+#Likelihood
+for (i in 1:n) {
+	x[i] ~ dnorm(mu,tau)
+	}
+tau<-1/pow(sig,2)
+#Priors 
+#----------
+#Inciso a
+mu ~ dnorm(200,tau0)
+tau0<-1/40
+sig ~ dgamma(10,1)
+#----------
+#Prediction
+x1 ~ dnorm(mu,tau)
+}
+```
+
+### Definimos los datos, inicializamos y seleccionamos los parámetros a monitorear.
+```{r, message=FALSE, warning=FALSE}
 
 library(R2OpenBUGS)
 library(R2jags)
+library(ggplot2)
 
+```
+```{r}
 #-Working directory-
 setwd("E:/itam/2016 Verano/glm/")
 
 #--- Ejemplo 2---
-#-Reading data-
-utilidad<-c(212, 207, 210,
-            196, 223, 193,
-            196, 210, 202, 221)
+#--Datos
+utilidad<-c(212, 207, 210, 196, 223, 193, 196, 210, 202, 221)
 n<-length(utilidad)
 
+summary(utilidad)
+sd(utilidad)
 #-Defining data-
 data<-list("n"=n,"x"=utilidad)
 
@@ -38,10 +97,13 @@ inits<-function(){list(mu=0,sig=1,x1=0)}
 
 #-Selecting parameters to monitor-
 parameters<-c("mu","sig","x1")
+```
 
+### Simulamos con el modelo previamente definido y graficamos.
+``` {r}
 #-Running code-
 #OpenBUGS
-ej2.sim<-bugs(data,inits,parameters,model.file="Ej2.txt",              n.iter=5000,n.chains=1,n.burnin=500)
+ej2.sim<-bugs(data,inits,parameters,model.file="Ej2_a.txt",           n.iter=5000,n.chains=1,n.burnin=500)
 
 #-Monitoring chain-
 
@@ -52,13 +114,13 @@ dev.off()
 ```
 
 
+
 ```{r}
 #Cadena
-
 #OpenBUGS
 out<-ej2.sim$sims.list
 
-z<-out$x1
+z<-out$mu
 par(mfrow=c(2,2))
 plot(z,type="l")
 plot(cumsum(z)/(1:length(z)),type="l")
@@ -70,7 +132,6 @@ acf(z)
 #Resumen (estimadores)
 #OpenBUGS
 out.sum<-ej2.sim$summary
-
 print(out.sum)
 ```
 
@@ -78,10 +139,71 @@ print(out.sum)
 #DIC
 #OpenBUGS
 out.dic<-ej2.sim$DIC
-
 print(out.dic)
+```
+
+### Ahora para el inciso b, utilizando una distribución inicial no informativa.
+
+* Utilizamos el archivo __Eje2_b.txt__ para describir nuestro modelo:
+```shell
+model
+{
+#Likelihood
+for (i in 1:n) {
+	x[i] ~ dnorm(mu,tau)
+	}
+tau<-1/pow(sig,2)
+#Priors 
+#----------
+#Inciso b
+mu ~ dnorm(0,0.0001)
+sig ~ dgamma(0.001,0.001)
+#Prediction
+x1 ~ dnorm(mu,tau)
+}
+```
+
+### Simulamos con el modelo previamente definido y graficamos.
+```{r}
+#-Running code-
+#OpenBUGS
+ej2.sim<-bugs(data,inits,parameters,model.file="Ej2_b.txt",           n.iter=5000,n.chains=1,n.burnin=500)
+
+#-Monitoring chain-
+
+#Traza de la cadena
+traceplot(ej2.sim)
+
+dev.off()
 
 ```
 
 
 
+
+```{r}
+#Cadena
+#OpenBUGS
+out<-ej2.sim$sims.list
+
+z<-out$mu
+par(mfrow=c(2,2))
+plot(z,type="l")
+plot(cumsum(z)/(1:length(z)),type="l")
+hist(z,freq=FALSE)
+acf(z)
+```
+
+```{r}
+#Resumen (estimadores)
+#OpenBUGS
+out.sum<-ej2.sim$summary
+print(out.sum)
+```
+
+```{r}
+#DIC
+#OpenBUGS
+out.dic<-ej2.sim$DIC
+print(out.dic)
+```
