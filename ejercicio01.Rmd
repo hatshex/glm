@@ -1,13 +1,6 @@
----
-title: "R Notebook"
-output:
-  html_document: default
-  html_notebook: default
----
-
 ### Ejercicios de clase: Utiliza el paquete WinBugs, OpenBugs, Jags para resolver los siguientes ejercicios:
 
-1. Sea __θ__ la tasa de créditos hipotecarios otorgados por un banco. Durante 2004 la tasa promedio fue de __60%__ y la desviación estándar de la tasa fue de __0.04__. En lo que va del año 2005 se han solicitado 100 créditos, de los cuales se han otorgado únicamente __50__.
+1. Sea θ la tasa de créditos hipotecarios otorgados por un banco. Durante 2004 la tasa promedio fue de __60%__ y la desviación estándar de la tasa fue de __0.04__. En lo que va del año 2005 se han solicitado 100 créditos, de los cuales se han otorgado únicamente __50__.
   * a) Usando la información del año pasado, encuentra la distribución beta que mejor describe el conocimiento inicial.
   * b) Usando la información del año pasado, encuentra la distribución normal transformada que mejor describa el conocimiento inicial.
   * c) Determina la distribución inicial de referencia.
@@ -17,108 +10,11 @@ output:
   
 ## Respuestas
 a) Información que requerimos
-* Definimos el modelo
+  * n = 100
+  * ∑i=1 Xi = 50 ( Sumatoria de 1 hasta n=100 de las x_is=50)
+  * ∑i=1100xi=50
+  * Definimos el modelo
     + Las variables son de tipo Bernoulli (θ)
     + f(θ) es nuestra distribución inicial
-```{r}
-
-model
-{
-#Likelihood
-for (i in 1:n) {
-	x[i] ~ dbin(theta,1)
-	}
-#Priors
-#----------
-#Inciso a
-theta ~ dbeta(89.4,59.6)
-#Predictive
-for (j in 1:2) {
-	x1[j] ~ dbin(theta,1)
-	}
-}
-
-```
-
-  
-
-\begin{align*}
-\sum_{i=1}^{n=100} x_{i}= 50 \\
-\\
-E(θ) = 0.6\\
-\\
-\sqrt{Var(θ)}=0.04\\
-
-\end{align*}
- 
-
-```{r, echo=TRUE}
-library(R2OpenBUGS)
-library(R2jags)
-
-
-#--- Ejemplo 1---
-#-Reading data-
-n<-100
-credito<-c(rep(1,n/2),rep(0,n/2))
-
-#-Defining data-
-data<-list("n"=n,"x"=credito)
-
-#-Defining inits-
-inits<-function(){list(theta=0.5,x1=rep(1,2))}
-inits<-function(){list(lambda=0)}
-#inits<-function(){list(theta=0.5,eta=1)}
-
-#-Selecting parameters to monitor-
-parameters<-c("theta","x1")
-#parameters<-c("theta","eta")
-
-#-Running code-
-#OpenBUGS
-ej1.sim<-bugs(data,inits,parameters,model.file="Ej1_a.txt",
-              n.iter=5000,n.chains=1,n.burnin=500)
-#JAGS
-#ej1.sim<-jags(data,inits,parameters,model.file="Ej1_a.txt",
-#              n.iter=5000,n.chains=1,n.burnin=500)
-
-#-Monitoring chain-
-
-#Traza de la cadena
-traceplot(ej1.sim)
-
-#Cadena
-
-#OpenBUGS
-out<-ej1.sim$sims.list
-
-#JAGS
-#out<-ej1.sim$BUGSoutput$sims.list
-
-z<-out$x1
-par(mfrow=c(2,2))
-plot(z,type="l")
-plot(cumsum(z)/(1:length(z)),type="l")
-hist(z,freq=FALSE)
-acf(z)
-
-#Resumen (estimadores)
-#OpenBUGS
-out.sum<-ej1.sim$summary
-
-#JAGS
-#out.sum<-ej1.sim$BUGSoutput$summary
-
-print(out.sum)
-
-#DIC
-#OpenBUGS
-out.dic<-ej1.sim$DIC
-
-#JAGS
-#out.dic<-ej1.sim$BUGSoutput$DIC
-
-print(out.dic)
-
-```
-
+  * E(θ) = 0.6
+  * 
