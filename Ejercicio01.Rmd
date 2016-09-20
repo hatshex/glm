@@ -1,0 +1,20 @@
+### Ejercicios de clase: Utiliza el paquete WinBugs, OpenBugs, Jags para resolver los siguientes ejercicios:
+
+1. Sea θ la tasa de créditos hipotecarios otorgados por un banco. Durante 2004 la tasa promedio fue de __60%__ y la desviación estándar de la tasa fue de __0.04__. En lo que va del año 2005 se han solicitado 100 créditos, de los cuales se han otorgado únicamente __50__.
+  * a) Usando la información del año pasado, encuentra la distribución beta que mejor describe el conocimiento inicial.
+  * b) Usando la información del año pasado, encuentra la distribución normal transformada que mejor describa el conocimiento inicial.
+  * c) Determina la distribución inicial de referencia.
+  * d) Usando los datos del año 2005 encuentra la distribución final para cada una de las distribuaciones iniciales de los inicisos a - c
+  * e) Estima  la tasa de créditos otorgados, usando las 3 distribuciones finales del iniciso d.
+  * f) Estima el momio de otorgar un crédito, i.e., ϕ=\θ / (1-θ), usando las 3 distribuciones finales del inciso d.
+  
+## Respuestas
+a) Información que requerimos
+  * n = 100
+  * ∑i=1 Xi = 50 ( Sumatoria de 1 hasta n=100 de las x_is=50)
+  * ∑i=1100xi=50
+  * Definimos el modelo
+    + Las variables son de tipo Bernoulli (θ)
+    + f(θ) es nuestra distribución inicial
+  * E(θ) = 0.6
+  * 

@@ -34,3 +34,6 @@ En Predictive Modeling Applications in Actuarial Science. E.W. Frees,
 R.A. Derrig & G. Meyers (eds.) Cambridge University Press, pp 334-366.
 6. Banerjee, S., Carlin, B. P. & Gelfand, A. (2014). Hierarchical Modeling
 and Analysis for Spatial Data, 2a. edición. Chapman & Hall: Boca Raton. 
+
+## Información Básica e interesante
+* [Comando básicos de R](http://personales.unican.es/gonzaleof/R/comandos.pdf)
