@@ -5,10 +5,8 @@
 
 ## OBJETIVO:
 
-El estudiante conocerá los principios básicos de la inferencia
-bayesiana y se familiarizará con el concepto de modelado estadístico en
-general. Conocerá algunas de las familias de modelos más comunes y será
-capaz de realizar un análisis estadístico bayesiano para estos modelos.
+El estudiante conocerá los principios básicos de la inferencia bayesiana y se familiarizará con el concepto de modelado estadístico en
+general. Conocerá algunas de las familias de modelos más comunes y será capaz de realizar un análisis estadístico bayesiano para estos modelos.
 
 ## TEMARIO:
 1. Introducción a la inferencia bayesiana.
@@ -37,3 +35,7 @@ and Analysis for Spatial Data, 2a. edición. Chapman & Hall: Boca Raton.
 
 ## Información Básica e interesante
 * [Comando básicos de R](http://personales.unican.es/gonzaleof/R/comandos.pdf)
+* [GLM I An Introduction to Generalized Linear Models](https://www.casact.org/education/rpm/2009/handouts/havlicek.pdf)
+* [The General Linear Model A talk for dummies, by dummies](http://www.fil.ion.ucl.ac.uk/mfd_archive/2011/page1/mfd2011_GLM.pdf)
+* [Statistical Modeling for Environmental Data](http://www.wright.edu/~thaddeus.tarpey/es714.html)
+* [Introduction to Statistical Modeling of Environmental Data](http://www.wright.edu/~thaddeus.tarpey/stt630.html)
