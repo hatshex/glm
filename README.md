@@ -41,4 +41,4 @@ and Analysis for Spatial Data, 2a. edición. Chapman & Hall: Boca Raton.
 * [Introduction to Statistical Modeling of Environmental Data](http://www.wright.edu/~thaddeus.tarpey/stt630.html)
 * [Practical Data Analysis with BUGS using R](http://bendixcarstensen.com/Bayes/Cph-2012/)
 * [Descargar libros](http://bacbuc.hd.free.fr/WebDAV/data/Bouquins/)
-* [Gelman book](http://www.stat.columbia.edu/~gelman/book/)
+* [Bayesian Data Analysis Andrew Gelman book](http://www.stat.columbia.edu/~gelman/book/)
