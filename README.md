@@ -39,3 +39,6 @@ and Analysis for Spatial Data, 2a. edición. Chapman & Hall: Boca Raton.
 * [The General Linear Model A talk for dummies, by dummies](http://www.fil.ion.ucl.ac.uk/mfd_archive/2011/page1/mfd2011_GLM.pdf)
 * [Statistical Modeling for Environmental Data](http://www.wright.edu/~thaddeus.tarpey/es714.html)
 * [Introduction to Statistical Modeling of Environmental Data](http://www.wright.edu/~thaddeus.tarpey/stt630.html)
+* [Practical Data Analysis with BUGS using R](http://bendixcarstensen.com/Bayes/Cph-2012/)
+* [Descargar libros](http://bacbuc.hd.free.fr/WebDAV/data/Bouquins/)
+* [Gelman book](http://www.stat.columbia.edu/~gelman/book/)
