@@ -19,12 +19,12 @@ general. Conocerá algunas de las familias de modelos más comunes y será capaz
 
 
 ## REFERENCIAS:
-1. Bernardo, J. M. (1981). Bioestadística: Una perspectiva Bayesiana.
-Vicens Vives: Barcelona. (http://www.uv.es/bernardo/Bioestadistica.pdf)
-2. Gutiérrez-Peña, E. (1997). Métodos computacionales en la inferencia
-Bayesiana. Monografía IIMAS-UNAM Vol. 6, No. 15.
+1. [Bernardo, J. M. (1981). Bioestadística: Una perspectiva Bayesiana.
+Vicens Vives: Barcelona.] (http://www.uv.es/bernardo/Bioestadistica.pdf)
+2. [Gutiérrez-Peña, E. (1997). Métodos computacionales en la inferencia
+Bayesiana. Monografía IIMAS-UNAM Vol. 6, No. 15.]
 (http://www.dpye.iimas.unam.mx/eduardo/MCB/index.html)
-3. Congdon, P. (2001). Bayesian Statistical Modelling. Wiley: Chichester.
+3. [Congdon, P. (2001). Bayesian Statistical Modelling. Wiley: Chichester.](https://drive.google.com/open?id=0B60o2E1S5j6rVUZTellkYlctZzg)
 4. Gelman, A., Carlin, J. B., Stern, H. S. & Rubin, D. (2002). Bayesian Data
 Analysis, 2a. edición. Chapman & Hall: Boca Raton. 
 5. Nieto-Barajas, L. E. & de Alba, E. (2014). Bayesian regression models.
