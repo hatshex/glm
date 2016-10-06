@@ -25,13 +25,9 @@ Vicens Vives: Barcelona.] (http://www.uv.es/bernardo/Bioestadistica.pdf)
 Bayesiana. Monografía IIMAS-UNAM Vol. 6, No. 15.]
 (http://www.dpye.iimas.unam.mx/eduardo/MCB/index.html)
 3. [Congdon, P. (2001). Bayesian Statistical Modelling. Wiley: Chichester.](https://drive.google.com/open?id=0B60o2E1S5j6rVUZTellkYlctZzg)
-4. Gelman, A., Carlin, J. B., Stern, H. S. & Rubin, D. (2002). Bayesian Data
-Analysis, 2a. edición. Chapman & Hall: Boca Raton. 
-5. Nieto-Barajas, L. E. & de Alba, E. (2014). Bayesian regression models.
-En Predictive Modeling Applications in Actuarial Science. E.W. Frees,
-R.A. Derrig & G. Meyers (eds.) Cambridge University Press, pp 334-366.
-6. Banerjee, S., Carlin, B. P. & Gelfand, A. (2014). Hierarchical Modeling
-and Analysis for Spatial Data, 2a. edición. Chapman & Hall: Boca Raton. 
+4. [Gelman, A., Carlin, J. B., Stern, H. S. & Rubin, D. (2002). Bayesian Data Analysis, 2a. edición. Chapman & Hall: Boca Raton.](https://drive.google.com/open?id=0B60o2E1S5j6rcmJFTXJSeDJBUG8) 
+5. [Nieto-Barajas, L. E. & de Alba, E. (2014). Bayesian regression models. En Predictive Modeling Applications in Actuarial Science. E.W. Frees,  R.A. Derrig & G. Meyers (eds.) Cambridge University Press, pp 334-366.](https://drive.google.com/open?id=0B60o2E1S5j6rQkFlVmY5MWMxWW8)
+6. [Banerjee, S., Carlin, B. P. & Gelfand, A. (2014). Hierarchical Modeling and Analysis for Spatial Data, 2a. edición. Chapman & Hall: Boca Raton.](https://drive.google.com/open?id=0B60o2E1S5j6rN3VPOWVYZXdSNzA) 
 
 ## Información Básica e interesante
 * [Comando básicos de R](http://personales.unican.es/gonzaleof/R/comandos.pdf)
