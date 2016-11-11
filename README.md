@@ -38,3 +38,4 @@ Bayesiana. Monografía IIMAS-UNAM Vol. 6, No. 15.]
 * [Practical Data Analysis with BUGS using R](http://bendixcarstensen.com/Bayes/Cph-2012/)
 * [Descargar libros](http://bacbuc.hd.free.fr/WebDAV/data/Bouquins/)
 * [Bayesian Data Analysis Andrew Gelman book](http://www.stat.columbia.edu/~gelman/book/)
+* [Universidad de buenos aires](http://www.dm.uba.ar/materias/)
