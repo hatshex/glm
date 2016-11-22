@@ -11,7 +11,20 @@ Paquetes: R2WinBUGS, R2OpenBUGS, R2jags
 El paquete de OpenBugs usa librerías para 32 bits y el Sistema Operativo es de 64 bits, por lo que necesitamos instalar la las librerías comunes en su versión de 32 bits
 
 ``` shell
+sudo apt-get update
+sudo apt-get ugrade
 sudo apt-get install gcc-multilib g++-multilib
+```
+1.- Descarga el archivo [OpenBUGS-3.2.3.tar.gz](http://www.openbugs.net/w/OpenBUGS_3_2_3?action=AttachFile&do=get&target=OpenBUGS-3.2.3.tar.gz)
+2.- Abre una terminal y ve a la carpeta en donde se descargó el archivo, en mi caso /home/hatshex/Download/ y ejecutar los siguientes comandos
+
+``` shell
+tar zxvf OpenBUGS-3.2.3.tar.gz
+cd OpenBUGS-3.2.3
+./configure
+make
+sudo make install
+man OpenBUGS
 ```
 
 ## Instalando R
