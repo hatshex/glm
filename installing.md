@@ -16,6 +16,7 @@ sudo apt-get ugrade
 sudo apt-get install gcc-multilib g++-multilib
 ```
 1.- Descarga el archivo [OpenBUGS-3.2.3.tar.gz](http://www.openbugs.net/w/OpenBUGS_3_2_3?action=AttachFile&do=get&target=OpenBUGS-3.2.3.tar.gz)
+
 2.- Abre una terminal y ve a la carpeta en donde se descargó el archivo, en mi caso /home/hatshex/Download/ y ejecutar los siguientes comandos
 
 ``` shell
