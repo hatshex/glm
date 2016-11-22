@@ -7,6 +7,13 @@ Paquetes: R2WinBUGS, R2OpenBUGS, R2jags
 * OpenBUGS (http://www.openbugs.net/)
 * JAGS (http://sourceforge.net/projects/mcmc-jags/files/JAGS/) 
 
+## Para Ubuntu 16.04
+El paquete de OpenBugs usa librerías para 32 bits y el Sistema Operativo es de 64 bits, por lo que necesitamos instalar la las librerías comunes en su versión de 32 bits
+
+``` shell
+sudo apt-get install gcc-multilib g++-multilib
+```
+
 ## Instalando R
 http://ftp.osuosl.org/pub/cran/
 
